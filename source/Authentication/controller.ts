@@ -147,13 +147,12 @@ const loginUser = async (req: Request, res: Response): Promise<Response> => {
 };
 
 /*
- * NAME - loginUser
- * REQUEST METHOD - POST
- * AIM - Securely sign in user with provided credentials.
+ * NAME - login with Google
+ * REQUEST METHOD - GET
+ * AIM - Securely create or sign in user google account.
  */
 const googleCallback = (req: Request, res: Response) => {
   try {
-    console.log("I am about to redirect..");
     res.redirect("http://localhost:3000");
   } catch (err) {
     console.log(err);
