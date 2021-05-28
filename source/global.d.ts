@@ -1,7 +1,1 @@
-declare global {
-  namespace Express {
-    export interface Request {}
-  }
-}
-
-export {};
+declare module "amqplib/callback_api";
