@@ -1,6 +1,5 @@
 import passport from "passport";
 import data from "passport-google-oauth20";
-import { Op } from "sequelize";
 import { uniqueCode, jwtSignUser, sendAuthMail } from "./index";
 import db from "../models";
 
