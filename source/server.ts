@@ -10,11 +10,11 @@ db.sequelize
   .then(() => {
     ampqlib.connect(
       `${process.env.AMPQ_URI}`,
-      (error0: any, connection: ampqlib.Connection) => {
+      (error0: any, connection: any) => {
         if (error0) {
           throw error0;
         }
-        connection.createChannel((error1: any, channel: ampqlib.Channel) => {
+        connection.createChannel((error1: any, channel: any) => {
           if (error1) {
             throw error1;
           }

@@ -1,1 +1,1 @@
-//declare module "amqplib/callback_api";
+declare module "amqplib/callback_api";
