@@ -8,23 +8,26 @@ let mychannel;
 db.sequelize
   .sync()
   .then(() => {
-    ampqlib.connect(`${process.env.AMPQ_URI}`, (error0, connection) => {
-      if (error0) {
-        throw error0;
-      }
-      connection.createChannel((error1, channel) => {
-        if (error1) {
-          throw error1;
+    ampqlib.connect(
+      `${process.env.AMPQ_URI}`,
+      (error0: any, connection: ampqlib.Connection) => {
+        if (error0) {
+          throw error0;
         }
-        mychannel = channel;
-        app.listen(PORT, () =>
-          console.log(`Server currently running on Port: ${PORT}`)
-        );
-        process.on("beforeExit", () => {
-          connection.close();
+        connection.createChannel((error1: any, channel: ampqlib.Channel) => {
+          if (error1) {
+            throw error1;
+          }
+          mychannel = channel;
+          app.listen(PORT, () =>
+            console.log(`Server currently running on Port: ${PORT}`)
+          );
+          process.on("beforeExit", () => {
+            connection.close();
+          });
         });
-      });
-    });
+      }
+    );
   })
   .catch(() => console.error("Unable to connect to the database"));
 
