@@ -2,16 +2,31 @@ import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import HttpStatus from "http-status-codes";
-import { ResponseError, handleError } from "./Error";
 import helmet from "helmet";
+import passport from "passport";
+import session from "express-session";
+
+import { ResponseError, handleError } from "./Error";
 import { router as AuthRouter } from "./Authentication";
 import { router as UserRouter } from "./User/routes";
+require("./Authentication/passport");
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(helmet());
+
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Define Routes
 app.use("/users", UserRouter);

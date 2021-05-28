@@ -5,4 +5,6 @@ export interface IUser {
   password: string;
   photoUrl: string;
   handle: string;
+  phone: string;
+  googleId: string;
 }

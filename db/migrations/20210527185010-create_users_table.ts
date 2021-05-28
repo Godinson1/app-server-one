@@ -30,6 +30,15 @@ module.exports = {
       photoUrl: {
         type: Sequelize.STRING,
       },
+      code: {
+        type: Sequelize.INTEGER,
+      },
+      active: {
+        type: Sequelize.BOOLEAN,
+      },
+      googleId: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         type: Sequelize.DATE,
       },

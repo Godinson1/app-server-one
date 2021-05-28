@@ -2,7 +2,7 @@ import { app } from "./app";
 import db from "./models";
 import * as ampqlib from "amqplib/callback_api";
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 let mychannel;
 
 db.sequelize

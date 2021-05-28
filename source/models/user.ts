@@ -33,6 +33,15 @@ module.exports = (sequelize: any, DataTypes: any) => {
       photoUrl: {
         type: DataTypes.STRING,
       },
+      googleId: {
+        type: DataTypes.STRING,
+      },
+      code: {
+        type: DataTypes.INTEGER,
+      },
+      active: {
+        type: DataTypes.BOOLEAN,
+      },
     },
     {
       hooks: {

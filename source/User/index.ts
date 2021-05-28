@@ -1,4 +1,4 @@
 import { router } from "./routes";
-import { getAllUser } from "./controller";
+import { getAllUser, deleteAllUser } from "./controller";
 
-export { router, getAllUser };
+export { router, getAllUser, deleteAllUser };
