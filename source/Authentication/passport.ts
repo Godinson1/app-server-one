@@ -40,7 +40,7 @@ passport.use(
             profileData.email,
             profileData.given_name
           );
-          done(null, alreadyExist);
+          done(null, newUser);
         }
       } catch (err) {
         console.error(err);
@@ -50,7 +50,7 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-  done(null, user);
+  done(null, user.id);
 });
 
 passport.deserializeUser(async (id, done) => {
