@@ -32,7 +32,7 @@ app.use(passport.session());
 app.use("/users", UserRouter);
 app.use("/auth", AuthRouter);
 
-// setting fall back route and message for undefined routes
+// setting fall back route and message for undefined route
 app.use((req: Request, res: Response, next: NextFunction) => {
   const error = new Error("Not found") as ResponseError;
   error.status = HttpStatus.NOT_FOUND;
