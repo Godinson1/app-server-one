@@ -55,7 +55,7 @@ app.use(
   }
 );
 
-// setting fall back message for other uncaught errors
+// setting fall back message for other uncaught errors in app
 app.use(
   (
     error: { message: string; status: number },
