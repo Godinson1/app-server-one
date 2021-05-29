@@ -5,8 +5,8 @@ import { welcomeBody, welcomeHeader, GMAIL } from "./index";
 
 const jwtSignUser = (user: IUser): string => {
   const ONE_WEEK = 60 * 60 * 24 * 7;
-  const { id, name, email, handle, phone } = user;
-  const userData = { id, name, email, handle, phone };
+  const { id, name, email, handle } = user;
+  const userData = { id, name, email, handle };
   return jwt.sign(userData, `${process.env.jwt_secret}`, {
     expiresIn: ONE_WEEK,
   });

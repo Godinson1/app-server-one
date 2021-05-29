@@ -6,6 +6,7 @@ import { jwtSignUser, sendAuthMail, uniqueCode } from "./index";
 import { validateLogin, validateReg } from "../validation";
 import bcrypt from "bcryptjs";
 import db from "../models";
+import { IUser } from "../Model/interface";
 
 //Destructure status codes
 const {
@@ -153,7 +154,8 @@ const loginUser = async (req: Request, res: Response): Promise<Response> => {
  */
 const googleCallback = (req: Request, res: Response) => {
   try {
-    res.redirect("http://localhost:3000");
+    const token = jwtSignUser(req.user as IUser);
+    res.redirect(`http://localhost:3000?t=${token}`);
   } catch (err) {
     console.log(err);
     return handleResponse(
