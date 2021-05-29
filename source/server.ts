@@ -1,6 +1,6 @@
 import { app } from "./app";
 import db from "./models";
-import * as ampqlib from "amqplib/callback_api";
+import * as amqp from "amqplib/callback_api";
 
 const PORT = process.env.PORT || 5000;
 let mychannel;
@@ -8,7 +8,7 @@ let mychannel;
 db.sequelize
   .sync()
   .then(() => {
-    ampqlib.connect(`${process.env.AMPQ_URI}`, (error0, connection) => {
+    amqp.connect(`${process.env.AMPQ_URI}`, (error0, connection) => {
       if (error0) {
         throw error0;
       }
