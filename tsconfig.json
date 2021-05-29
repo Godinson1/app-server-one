@@ -7,7 +7,7 @@
     "strict": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "noImplicitAny": false,
+    "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "typeRoots": ["source/typings", "./node_modules/@types"]
   },
