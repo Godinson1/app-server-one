@@ -8,7 +8,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./typings", "./node_modules/@types"]
+    "typeRoots": ["./typings", "./node_modules/@types", "./source/@types"]
   },
   "include": [
     "source/**/*.ts",
@@ -16,5 +16,5 @@
     "app.ts",
     "config/config.js"
   ],
-  "exclude": ["node_modules", "typings"]
+  "exclude": ["node_modules", "typings", "source/@types"]
 }

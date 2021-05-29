@@ -8,11 +8,11 @@ let mychannel;
 db.sequelize
   .sync()
   .then(() => {
-    amqp.connect(`${process.env.AMPQ_URI}`, (error0, connection) => {
+    amqp.connect(`${process.env.AMPQ_URI}`, (error0: any, connection: any) => {
       if (error0) {
         throw error0;
       }
-      connection.createChannel((error1, channel) => {
+      connection.createChannel((error1: any, channel: any) => {
         if (error1) {
           throw error1;
         }
