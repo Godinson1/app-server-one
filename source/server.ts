@@ -18,7 +18,7 @@ db.sequelize
         }
         mychannel = channel;
         app.listen(PORT, () =>
-          console.log(`Server currently running on Port: ${PORT}`)
+          console.log(`Server currently running on PORT: ${PORT}`)
         );
       });
       process.on("beforeExit", () => {
