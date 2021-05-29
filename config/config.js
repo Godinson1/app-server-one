@@ -16,10 +16,10 @@ module.exports = {
     dialect: process.env.DB_DIALET,
   },
   production: {
-    username: process.env.PROD_DB_USER,
-    password: process.env.PROD_DB_PASSWORD,
-    database: process.env.PROD_DB_NAME,
-    host: process.env.DB_HOST,
+    username: "b1e80fe141ee70",
+    password: "95589fe1",
+    database: "heroku_c446b8670fec9ad",
+    host: "us-cdbr-east-04.cleardb.com",
     dialect: "mysql",
   },
 };
