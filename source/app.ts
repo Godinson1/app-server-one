@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import HttpStatus from "http-status-codes";
 import helmet from "helmet";
 import passport from "passport";
-import session from "express-session";
 
 import { ResponseError, handleError } from "./Error";
 import { router as AuthRouter } from "./Authentication";
@@ -17,16 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use(helmet());
 
-app.use(
-  session({
-    secret: "keyboard cat",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-
 app.use(passport.initialize());
-app.use(passport.session());
 
 //Define Routes
 app.use("/users", UserRouter);
