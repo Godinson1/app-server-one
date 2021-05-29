@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["source/typings", "./node_modules/@types"]
+    "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "include": [
     "source/**/*.ts",
@@ -17,5 +17,5 @@
     "app.ts",
     "config/config.js"
   ],
-  "exclude": ["node_modules", "source/typings"]
+  "exclude": ["node_modules", "typings"]
 }
