@@ -8,3 +8,12 @@ export interface IUser {
   phone: string;
   googleId: string;
 }
+
+export interface IPost {
+  name: string;
+  id: number;
+  content: string;
+  likes: number;
+  photoUrl: string;
+  handle: string;
+}

@@ -8,6 +8,7 @@ import passport from "passport";
 import { ResponseError, handleError } from "./Error";
 import { router as AuthRouter } from "./Authentication";
 import { router as UserRouter } from "./User/routes";
+import { router as PostRouter } from "./Post/routes";
 require("./Authentication/passport");
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(passport.initialize());
 //Define Routes
 app.use("/users", UserRouter);
 app.use("/auth", AuthRouter);
+app.use("/posts", PostRouter);
 
 // setting fall back route and message for undefined route
 app.use((req: Request, res: Response, next: NextFunction) => {

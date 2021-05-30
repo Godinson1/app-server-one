@@ -3,16 +3,16 @@ import db from "./models";
 import * as amqp from "amqplib/callback_api";
 
 const PORT = process.env.PORT || 5000;
-let mychannel;
+let mychannel: amqp.Channel;
 
 db.sequelize
   .sync()
   .then(() => {
-    amqp.connect(`${process.env.AMPQ_URI}`, (error0: any, connection: any) => {
+    amqp.connect(`${process.env.AMPQ_URI}`, (error0: any, connection) => {
       if (error0) {
         throw error0;
       }
-      connection.createChannel((error1: any, channel: any) => {
+      connection.createChannel((error1: any, channel) => {
         if (error1) {
           throw error1;
         }
