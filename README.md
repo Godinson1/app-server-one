@@ -4,7 +4,7 @@ First backend server for demonstrating microservice architecture using rabbitmq.
 
 # Endpoint
 
-- https://app-server-two.herokuapp.com/
+- https://app-server-one.herokuapp.com/
 
 # Current Technologies Involved
 
