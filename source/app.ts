@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import HttpStatus from "http-status-codes";
 import helmet from "helmet";
+import compression from "compression";
 import passport from "passport";
 
 import { ResponseError, handleError } from "./Error";
@@ -16,6 +17,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(helmet());
+app.use(compression());
 
 app.use(passport.initialize());
 
